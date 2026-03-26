@@ -7,169 +7,282 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
 </head>
 <body>
 
-    <nav id="navbar">
+   <nav id="navbar">
         <a href="#home" class="logo-link">
-    <img src="logo.png" alt="KSA.iko Logo" class="nav-logo"></a>
+            <img src="logo.png" alt="KSA.iko Logo" class="nav-logo">
+        </a>
+        
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#home" data-i18n="nav_home">Home</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#experience" data-i18n="nav_exp">Experience</a></li>
+            <li><a href="#projects" data-i18n="nav_proj">Projects</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact Us</a></li>
         </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+        
+        <div class="theme-toggle" id="theme-toggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </div>
+
+        <div class="lang-switcher" style="margin-left: 15px;">
+             <select id="lang-select" style="padding: 5px; border-radius: 5px; border: 1px solid var(--primary-color); background: var(--bg-light); color: var(--text-main);">
+                <option value="en">English</option>
+                <option value="zh">中文 (Mandarin)</option>
+                <option value="es">Español (Spanish)</option>
+                <option value="hi">हिंदी (Hindi)</option>
+                <option value="fr">Français (French)</option>
+              </select>
+        </div>
+
+        <div class="hamburger" aria-label="Open Navigation Menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
         </div>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <p class="subtitle">Aspiring Data Researcher</p>
-            <h1>Turning Data into <br><span class="highlight text-type"></span></h1>
-            <p class="desc">Passionate about transforming raw data into meaningful insights to support data-driven decision-making.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="https://linkedin.com/in/kumar-shivam-azad-7a7b73347" class="btn btn-secondary" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <p class="subtitle fade-in" data-i18n="hero_sub">Aspiring Data Researcher</p>
+            <h1 class="fade-in"><span data-i18n="hero_title">Turning Data into</span> <br><span class="highlight text-type"></span></h1>
+            
+            <p class="desc fade-in" data-i18n="hero_desc">Passionate about transforming raw data into meaningful insights to support data-driven decision-making.</p>
+            
+            <div class="hero-btns fade-in">
+                <a href="#projects" class="btn btn-primary" data-i18n="btn_view_proj">View Projects</a>
+                <a href="https://linkedin.com/in/kumar-shivam-azad-7a7b73347" class="btn btn-secondary" target="_blank"><i class="fab fa-linkedin"></i> <span data-i18n="btn_linkedin">LinkedIn</span></a>
             </div>
         </div>
     </header>
 
     <section id="about" class="section">
-        <h2 class="section-title">Academic Journey & Skills</h2>
+        <h2 class="section-title fade-in" data-i18n="about_title">Academic Journey & Skills</h2>
         <div class="about-container">
-            <div class="education-timeline">
+            <div class="education-timeline fade-in">
                 <div class="timeline-item">
-                    <h3>MCA (Data Science)</h3>
-                    <p>Gautam Buddha University, Greater Noida | 2025-2027(Expected)</p>
+                    <h3 data-i18n="edu_mca">MCA (Data Science)</h3>
+                    <p data-i18n="edu_mca_desc">Gautam Buddha University, Greater Noida | 2025-2027(Expected)</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>BCA (CGPA - 6.89)</h3>
-                    <p>United University, Prayagraj | 2022-2025</p>
+                    <h3 data-i18n="edu_bca">BCA</h3>
+                    <p data-i18n="edu_bca_desc">United University, Prayagraj | 2022-2025</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>Intermediate</h3>
-                    <p>Completed in 2021</p>
+                    <h3 data-i18n="edu_inter">Intermediate</h3>
+                    <p data-i18n="edu_inter_desc">Completed in 2021</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>High School</h3>
-                    <p>Completed in 2019</p>
+                    <h3 data-i18n="edu_high">High School</h3>
+                    <p data-i18n="edu_high_desc">Completed in 2019</p>
                 </div>
             </div>
             
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <i class="fab fa-python"></i>
-                    <h4>Python & R</h4>
-                    <p>Pandas, NumPy, EDA</p>
+                    <h4 data-i18n="skill_py_title">Python & R</h4>
+                    <p data-i18n="skill_py_desc">Pandas, NumPy, EDA</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <i class="fas fa-database"></i>
-                    <h4>Databases</h4>
-                    <p>MySQL, SQLite</p>
+                    <h4 data-i18n="skill_db_title">Databases</h4>
+                    <p data-i18n="skill_db_desc">MySQL, PostgreSQL</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <i class="fas fa-chart-pie"></i>
-                    <h4>Visualization</h4>
-                    <p>Power BI, Excel</p>
+                    <h4 data-i18n="skill_vis_title">Visualization</h4>
+                    <p data-i18n="skill_vis_desc">Power BI, Excel</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card fade-in">
                     <i class="fas fa-code"></i>
-                    <h4>Web Basics</h4>
-                    <p>HTML, CSS, JS</p>
+                    <h4 data-i18n="skill_web_title">Web Basics</h4>
+                    <p data-i18n="skill_web_desc">HTML5, CSS3, JS</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="experience" class="section bg-light">
-        <h2 class="section-title">Internship Experience</h2>
-        <div class="experience-card">
+        <h2 class="section-title fade-in" data-i18n="exp_title">Internship Experience</h2>
+        <div class="experience-card fade-in">
             <div class="exp-header">
-                <h3>Data Science Intern</h3>
-                <span class="date">Nov 2025 - Dec 2025</span>
+                <h3 data-i18n="exp_role">Data Science Intern</h3>
+                <span class="date" data-i18n="exp_date">Nov 2025 - Dec 2025</span>
             </div>
-            <h4>Cognifyz Technologies | Remote</h4>
+            <h4 data-i18n="exp_comp">Cognifyz Technologies | Remote</h4>
             <ul>
-                <li>Cleaned and preprocessed datasets using Python (Pandas, NumPy).</li>
-                <li>Performed Exploratory Data Analysis (EDA) to identify trends and patterns.</li>
-                <li>Created visual summaries and reports to communicate insights.</li>
+                <li data-i18n="exp_b1">Cleaned and preprocessed datasets using Python (Pandas, NumPy).</li>
+                <li data-i18n="exp_b2">Performed Exploratory Data Analysis (EDA) to identify trends and patterns.</li>
+                <li data-i18n="exp_b3">Created visual summaries and reports to communicate insights.</li>
             </ul>
         </div>
     </section>
+
     <section id="capabilities" class="section bg-light">
-        <h2 class="section-title">Practical Application of My Learning</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-light);">
+        <h2 class="section-title fade-in" data-i18n="cap_title">Practical Application of My Learning</h2>
+        <p class="fade-in" data-i18n="cap_desc" style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-light);">
             My academic journey across comprehensive computing and advanced data science modules equips me to handle the complete data lifecycle—from raw data extraction to deploying intelligent web applications.
         </p>
         
         <div class="usage-grid">
-            <div class="usage-card">
-                <div class="icon-wrapper"><i class="fas fa-chart-network"></i></div>
-                <h3>1. Predictive Modeling & AI</h3>
-                <p><strong>Derived from:</strong> Machine Learning, NLP, Probability & Statistics.</p>
-                <p class="usage-desc">I don't just use APIs; my foundation in multivariable calculus and linear algebra allows me to understand algorithms under the hood. I can build, tune, and evaluate models for classification, forecasting, and text analysis.</p>
+            <div class="usage-card fade-in">
+                <div class="icon-wrapper"><i class="fas fa-network-wired"></i></div>
+                <h3 data-i18n="cap1_title">1. Predictive Modeling & AI</h3>
+                <p><strong data-i18n="cap_derived">Derived from:</strong> <span data-i18n="cap1_src">Machine Learning, NLP, Probability & Statistics.</span></p>
+                <p class="usage-desc" data-i18n="cap1_desc">I don't just use APIs; my foundation in multivariable calculus and linear algebra allows me to understand algorithms under the hood. I can build, tune, and evaluate models for classification, forecasting, and text analysis.</p>
             </div>
 
-            <div class="usage-card">
+            <div class="usage-card fade-in">
                 <div class="icon-wrapper"><i class="fas fa-server"></i></div>
-                <h3>2. Scalable Data Architecture</h3>
-                <p><strong>Derived from:</strong> DBMS, Data Warehousing, Data Structures, OS.</p>
-                <p class="usage-desc">I design optimized database schemas and write efficient queries. I understand how to structure and store data securely so that analytical queries run fast, even on large datasets.</p>
+                <h3 data-i18n="cap2_title">2. Scalable Data Architecture</h3>
+                <p><strong data-i18n="cap_derived">Derived from:</strong> <span data-i18n="cap2_src">DBMS, Data Warehousing, Data Structures, OS.</span></p>
+                <p class="usage-desc" data-i18n="cap2_desc">I design optimized database schemas and write efficient queries. I understand how to structure and store data securely so that analytical queries run fast, even on large datasets.</p>
             </div>
 
-            <div class="usage-card">
+            <div class="usage-card fade-in">
                 <div class="icon-wrapper"><i class="fas fa-code-merge"></i></div>
-                <h3>3. End-to-End Deployment</h3>
-                <p><strong>Derived from:</strong> Python, Web Technology, Software Engineering.</p>
-                <p class="usage-desc">An ML model is only useful if people can use it. I can wrap data insights into interactive web applications and dashboards, bridging the gap between data science and software engineering.</p>
+                <h3 data-i18n="cap3_title">3. End-to-End Deployment</h3>
+                <p><strong data-i18n="cap_derived">Derived from:</strong> <span data-i18n="cap3_src">Python, Web Technology, Software Engineering.</span></p>
+                <p class="usage-desc" data-i18n="cap3_desc">An ML model is only useful if people can use it. I can wrap data insights into interactive web applications and dashboards, bridging the gap between data science and software engineering.</p>
             </div>
 
-            <div class="usage-card">
+            <div class="usage-card fade-in">
                 <div class="icon-wrapper"><i class="fas fa-lightbulb"></i></div>
-                <h3>4. Business Intelligence</h3>
-                <p><strong>Derived from:</strong> Data Visualization, Management Concepts, Business Communications.</p>
-                <p class="usage-desc">I translate complex analytical findings into clear, actionable business strategies. I focus on creating visual summaries that help stakeholders make data-driven decisions quickly.</p>
+                <h3 data-i18n="cap4_title">4. Business Intelligence</h3>
+                <p><strong data-i18n="cap_derived">Derived from:</strong> <span data-i18n="cap4_src">Data Visualization, Management Concepts, Business Communications.</span></p>
+                <p class="usage-desc" data-i18n="cap4_desc">I translate complex analytical findings into clear, actionable business strategies. I focus on creating visual summaries that help stakeholders make data-driven decisions quickly.</p>
             </div>
         </div>
     </section>
 
     <section id="projects" class="section">
-        <h2 class="section-title">Academic Projects</h2>
+        <h2 class="section-title fade-in" data-i18n="proj_title">Academic Projects</h2>
         <div class="project-grid">
-            <div class="project-card">
+            <div class="project-card fade-in">
                 <div class="project-tech">Python, MySQL</div>
-                <h3>Gym Management System</h3>
-                <p>- Developed a database-driven system to manage gym members, plans, and attendance.Implemented SQL-based data storage and automated reporting.</p>
+                <h3 data-i18n="proj1_title">Gym Management System</h3>
+                <p data-i18n="proj1_desc">- Developed a database-driven system to manage gym members, plans, and attendance. Implemented SQL-based data storage and automated reporting.</p>
             </div>
-            <div class="project-card">
+            <div class="project-card fade-in">
                 <div class="project-tech">Python, Streamlit</div>
-                <h3>FinBot Advisor</h3>
-                <p>A financial chatbot built using Streamlit to provide market insights and interactive data analytics.</p>
+                <h3 data-i18n="proj2_title">FinBot Advisor</h3>
+                <p data-i18n="proj2_desc">A financial chatbot built using Streamlit to provide market insights and interactive data analytics.</p>
             </div>
-            <div class="project-card">
-                <div class="project-tech">Machine Learning</div>
-                <h3>Movie Recommendation Engine</h3>
-                <p>An ML model utilizing collaborative filtering to analyze user preferences and suggest highly relevant films.</p>
-            </div>
-            <div class="project-card">
+            <div class="project-card fade-in">
                 <div class="project-tech">HTML, CSS, JS</div>
-                <h3>Web-Based Quiz Application</h3>
-                <p>Built a web-based quiz platform with real-time scoring, performance tracking, and interactive UI components.</p>
+                <h3 data-i18n="proj3_title">Personal Portfolio Website</h3>
+                <p data-i18n="proj3_desc">A responsive and interactive web portfolio featuring a dynamic dark mode toggle, modern UI/UX design, and an open-source collaboration showcase.</p>
             </div>
+            <div class="project-card fade-in">
+                <div class="project-tech">HTML, CSS, JS</div>
+                <h3 data-i18n="proj4_title">Web-Based Quiz Application</h3>
+                <p data-i18n="proj4_desc">Built a web-based quiz platform with real-time scoring, performance tracking, and interactive UI components.</p>
+            </div>
+        </div> 
+    </section> 
+    <section id="blog" class="section bg-light">
+        <h2 class="section-title fade-in" data-i18n="blog_title">Recent Insights</h2>
+        <div class="project-grid"> <article class="project-card fade-in">
+                <div class="project-tech">Machine Learning</div>
+                <h3 data-i18n="blog1_title">Why Linear Algebra is the Secret Weapon in Data Science</h3>
+                <p data-i18n="blog1_desc">A deep dive into how understanding matrices and vectors gives you a significant edge in building and tuning predictive models.</p>
+                <br>
+                <a href="#" class="btn btn-secondary" style="border-color: var(--primary-color); color: var(--primary-color);" data-i18n="btn_read_more">Read Article <i class="fas fa-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card fade-in">
+                <div class="project-tech">Data Architecture</div>
+                <h3 data-i18n="blog2_title">Designing Scalable Databases for Analytical Queries</h3>
+                <p data-i18n="blog2_desc">Exploring the transition from raw data extraction to optimized schemas that keep analytical queries running fast on large datasets.</p>
+                <br>
+                <a href="#" class="btn btn-secondary" style="border-color: var(--primary-color); color: var(--primary-color);" data-i18n="btn_read_more">Read Article <i class="fas fa-arrow-right"></i></a>
+            </article>
+
         </div>
     </section>
+    
+    <section id="open-source" class="section bg-light">
+        <h2 class="section-title fade-in" data-i18n="os_title">Open Source & Collaboration</h2>
+        <p class="fade-in" data-i18n="os_desc" style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-light);">
+            I strongly believe in building together. Whether you are a beginner looking to make your first pull request or an experienced developer wanting to optimize algorithms, I would love to collaborate!
+        </p>
+        
+        <div class="collab-grid">
+            
+            <div class="collab-card fade-in">
+                <div class="collab-badge active" data-i18n="os1_badge">Actively Seeking Contributors</div>
+                <h3 data-i18n="os1_title">FinBot Advisor</h3>
+                <p data-i18n="os1_desc">A financial chatbot built with Python and Streamlit providing market insights.</p>
+                <div class="help-wanted">
+                    <h4><i class="fas fa-hands-helping"></i> <span data-i18n="os_help_wanted">Help Wanted:</span></h4>
+                    <ul>
+                        <li data-i18n="os1_l1">UI/UX design improvements for the Streamlit interface</li>
+                        <li data-i18n="os1_l2">Integration of real-time financial market APIs</li>
+                        <li data-i18n="os1_l3">Bug fixes and code refactoring</li>
+                    </ul>
+                </div>
+                <div class="collab-actions">
+                    <a href="#" class="btn btn-primary" target="_blank"><i class="fas fa-code-branch"></i> <span data-i18n="os_btn_fork">Fork Repo</span></a>
+                    <a href="#" class="btn btn-secondary" target="_blank"><i class="fab fa-github"></i> <span data-i18n="os_btn_issues">View Issues</span></a>
+                </div>
+            </div>
 
-    <footer id="contact">
-        <h2>Let's Connect</h2>
-        <p>Currently open to data science and analytics opportunities.</p>
-        <div class="contact-info">
-            <a href="mailto:shivamazad1731@gmail.com"><i class="fas fa-envelope"></i> shivamazad1731@gmail.com</a>
-            <a href="tel:9721697658"><i class="fas fa-phone"></i> +919721697658</a>
+            <div class="collab-card fade-in">
+                <div class="collab-badge" data-i18n="os2_badge">Research Initiative</div>
+                <h3 style="font-size: 1.25rem;" data-i18n="os2_title">Global Transparent Exchange Infrastructure (GTEI)</h3>
+                <p data-i18n="os2_desc">An open-research conceptual framework and commercial strategy for coordinating economic, technological, and institutional data exchanges.</p>
+                <div class="help-wanted">
+                    <h4><i class="fas fa-microscope"></i> <span data-i18n="os_collab_needed">Collaboration Needed:</span></h4>
+                    <ul>
+                        <li data-i18n="os2_l1"><strong>Researchers:</strong> Co-authoring the foundational whitepaper and system architecture.</li>
+                        <li data-i18n="os2_l2"><strong>Data Architects:</strong> Designing transparent, scalable ledger models for institutional exchange.</li>
+                        <li data-i18n="os2_l3"><strong>Developers:</strong> Building the initial proof-of-concept API infrastructure.</li>
+                    </ul>
+                </div>
+                <div class="collab-actions">
+                    <a href="https://docs.google.com/document/d/1z4lCLCWQN-cz3qkc6zHjEn0kWDxNNoBvsb14_wvZQhg/edit?usp=sharing" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-book-open"></i> <span data-i18n="os_btn_abstract">Read Abstract</span>
+                    </a>
+                    
+                    <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> <span data-i18n="os_btn_repo">View Repo</span>
+                    </a>
+                </div>
+            </div> 
         </div>
-        <p class="copyright">&copy; 2026 KSA.iK0 PRIVATE LTD. All rights reserved.</p>
+        <div class="github-stats fade-in" style="text-align: center; margin-top: 3rem;">
+            <a href="https://github.com/K-ShivamZad" target="_blank" class="btn btn-secondary" style="border-color: var(--secondary-color); color: var(--secondary-color);">
+                <i class="fab fa-github"></i> <span data-i18n="os_btn_explore">Explore My GitHub Profile</span>
+            </a>
+        </div>
+    </section>
+            
+    <footer id="contact">
+        <h2 class="fade-in" data-i18n="footer_title">Let's Connect</h2>
+        <p class="fade-in" data-i18n="footer_desc">Currently open to data science and analytics opportunities.</p>
+        
+        <div class="contact-wrapper fade-in" style="max-width: 600px; margin: 2rem auto;">
+            <div class="contact-info" style="margin-bottom: 2rem;">
+                <a href="mailto:shivamazad1731@gmail.com"><i class="fas fa-envelope"></i> shivamazad1731@gmail.com</a>
+                <a href="tel:9721697658"><i class="fas fa-phone"></i> +919721697658</a>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <div style="margin-bottom: 1rem;">
+                    <input type="text" id="name" placeholder="Your Name" required style="width: 100%; padding: 12px; border-radius: 8px; border: none; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <input type="email" id="email" placeholder="Your Email" required style="width: 100%; padding: 12px; border-radius: 8px; border: none; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <textarea id="message" rows="5" placeholder="Your Message" required style="width: 100%; padding: 12px; border-radius: 8px; border: none; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <p id="form-status" style="margin-top: 1rem; font-weight: bold;"></p>
+            </form>
+        </div>
+        <p class="copyright fade-in" data-i18n="footer_copy">&copy; 2026 KSA.iKd PRIVATE LTD. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

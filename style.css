@@ -99,21 +99,12 @@ html {
     z-index: 1000;
     transition: var(--transition);
 }
+
 .nav-logo {
-    height: 45px; /* Adjust this to make the logo bigger or smaller */
+    height: 45px; 
     width: auto;
     object-fit: contain;
     display: block;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--secondary-color);
-}
-
-.logo span {
-    color: var(--primary-color);
 }
 
 .nav-links {
@@ -121,12 +112,12 @@ html {
     list-style: none;
     gap: 2rem;
 }
-/* Mobile Menu Active State */
+
 .nav-links.active {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 70px; /* Pushes it right below the navbar */
+    top: 70px; 
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.98);
@@ -175,9 +166,19 @@ html {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    /* minimum 2.5rem, scales dynamically with viewport width, max 4rem */
+    font-size: clamp(2.5rem, 5vw + 1rem, 4rem); 
     line-height: 1.2;
     margin-bottom: 1.5rem;
+}
+
+.section-title {
+    text-align: center;
+    /* minimum 2rem, scales dynamically, max 2.5rem */
+    font-size: clamp(2rem, 4vw + 1rem, 2.5rem);
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    position: relative;
 }
 
 .highlight {
@@ -295,6 +296,7 @@ html {
 .experience-card li {
     margin-bottom: 0.5rem;
 }
+
 /* Usage of Learning Section */
 .usage-grid {
     display: grid;
@@ -358,6 +360,7 @@ html {
     font-size: 0.95rem;
     line-height: 1.6;
 }
+
 /* Projects */
 .project-grid {
     display: grid;
@@ -391,6 +394,125 @@ html {
     color: var(--secondary-color);
     margin-bottom: 1rem;
     font-size: 1.4rem;
+}
+
+/* Open Source & Collaboration Section */
+.collab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.collab-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.collab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.collab-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: -2.5rem;
+    background: var(--text-light);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.4rem 3rem;
+    transform: rotate(45deg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.collab-badge.active {
+    background: #22c55e;
+}
+
+.collab-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.collab-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.help-wanted {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.help-wanted h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.help-wanted ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.help-wanted li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+.help-wanted li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.collab-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.collab-actions .btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.collab-actions .btn-secondary {
+    border-color: #cbd5e1;
+    color: var(--text-main);
+}
+
+.collab-actions .btn-secondary:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
 }
 
 /* Footer */
@@ -445,20 +567,117 @@ footer {
         gap: 0.5rem;
     }
 }
-/* Digital Background Watermark */
-body::before {
-    content: '';
-    position: fixed; /* Keeps it centered while scrolling */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60vw; /* Takes up 60% of the screen width */
-    height: 60vh;
-    background-image: url('logo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.03; /* Makes it incredibly faint (3% opacity) */
-    z-index: -1; /* Puts it behind all your content */
-    pointer-events: none; /* Ensures users can click links right through it */
+@media (max-width: 480px) {
+    .collab-actions {
+        flex-direction: column;
+    }
+}
+
+/* --- Navbar Scrolled State (Light Mode) --- */
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Navbar Dark Mode Adjustments --- */
+body.dark-mode #navbar {
+    background: rgba(15, 23, 42, 0.95); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Softer shadow for dark mode */
+}
+
+body.dark-mode #navbar.scrolled {
+    background: rgba(15, 23, 42, 0.98); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+/* Fix link text colors in dark mode so they aren't completely black */
+body.dark-mode .nav-links a {
+    color: var(--text-main); 
+}
+
+body.dark-mode .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Mobile Navigation Tweaks --- */
+/* Add a smooth fade-in for the mobile menu */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; 
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 2rem 0;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* =========================================
+   SCROLL ANIMATIONS
+   ========================================= */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, visibility;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Staggered delays for grid items so they cascade in beautifully */
+.skill-card:nth-child(2), .usage-card:nth-child(2), .project-card:nth-child(2), .collab-card:nth-child(2) {
+    transition-delay: 0.1s;
+}
+.skill-card:nth-child(3), .usage-card:nth-child(3), .project-card:nth-child(3) {
+    transition-delay: 0.2s;
+}
+.skill-card:nth-child(4), .usage-card:nth-child(4), .project-card:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+
+/* Large Desktops / TVs (1200px and up) */
+@media (min-width: 1200px) {
+    .section { padding: 120px 15%; }
+}
+
+/* Tablets & Small Laptops (769px to 1024px) */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 3.5rem; }
+    .about-container { gap: 2rem; }
+}
+
+/* Tablets (481px to 768px) - Merging with your existing 768px query */
+@media (max-width: 768px) {
+    .section { padding: 80px 5%; }
+    .hero { text-align: center; justify-content: center; }
+    .hero-btns { justify-content: center; }
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .about-container { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* Mobile Phones (480px and below) */
+@media (max-width: 480px) {
+    .section { padding: 60px 5%; }
+    .hero h1 { font-size: 2.5rem; }
+    .collab-actions { flex-direction: column; }
+    .btn { width: 100%; text-align: center; margin-bottom: 10px; } /* Easier thumb tapping */
+    .timeline-item::before { left: -30px; width: 15px; height: 15px; } /* Adjust timeline dots */
+    .education-timeline { padding-left: 1.5rem; }
 }
